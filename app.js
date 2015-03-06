@@ -5,23 +5,32 @@
 
 
     var app = angular.module('app', ['ngNewRouter','ngMaterial',
-    'app.home','app.about','app.add-student-form','app.contact']);
+    'app.home','app.about','app.add','app.contact']);
 
         app.controller('AppController', ['$router', AppController]);
 
     AppController.$routeConfig = [
-        { path: '/',           component: 'home' },
+        { path: '/',        component: 'home' },
         { path: '/about',      component: 'about' },
         { path: '/contact',    component: 'contact' },
-        { path: '/add-student-form',    component: 'add-student-form' },
+        { path: '/add',    component: 'add' },
         { path: '/detail/:id', component: 'detail' }
     ];
-    function AppController ($router) {}
 
-/*
+    function AppController ($router)
+    {
+
+    }
 
 
-*/
+
+
+
+
+
+
+
+
 
 
 

@@ -3,8 +3,8 @@
  */
 
 
-angular.module('app.add-student-form', [])
-    .controller('Add-student-formController', function () {
+angular.module('app.add', [])
+    .controller('AddController', function () {
         this.teachername = 'Sir Ishaq Bhojani';
 
         this.id= "admin@admin.com";
