@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>student app</title>
     <link rel="stylesheet" href="./bower_components/angular-material/angular-material.css"/>
     <link rel="stylesheet" href="./app.css"/>
 
@@ -15,42 +15,58 @@
     <script src="app.js"></script>
 
 </head>
+
+
+
 <body ng-app="myapp" ng-controller="myctrl">
 
+<span class="md-display-3">student and teacher app</span><br /><br />
 
 <md-button class="md-raised md-primary" ng-click="studentlogintab()">student login</md-button> <br />
 
 
-<div align="center" layout="column" ng-show="studentloginshow">
+<div  layout="column" ng-show="studentloginshow">
 
-<md-input-container flex>
-    <label>student id</label>
-    <input ng-model="user.city">
-</md-input-container>
+    <span class="md-display-1">student login</span>
 
-<md-input-container flex>
-    <label>password</label>
-    <input ng-model="user.state">
-</md-input-container>
+    <md-content md-theme="docs-dark" layout-padding layout="row" layout-sm="column">
 
+        <md-input-container>
+            <label>Title</label>
+            <input ng-model="user.title">
+        </md-input-container>
+        <md-input-container>
+            <label>Email</label>
+            <input ng-model="user.email" type="email">
+        </md-input-container>
+        <md-button class="md-raised">login</md-button>
+
+    </md-content>
 
 </div>
+
 
 <md-button class="md-raised md-primary" ng-click="teacherlogintab()">teacher login</md-button>
 
 
-<div align="center" layout="column" ng-show="teacherloginshow">
+<div layout="column" ng-show="teacherloginshow">
 
-    <md-input-container flex>
-        <label>teacher id</label>
-        <input ng-model="user.city">
-    </md-input-container>
+    <span class="md-display-1">teacher login</span>
 
-    <md-input-container flex>
-        <label>password</label>
-        <input ng-model="user.state">
-    </md-input-container>
+    <md-content md-theme="docs-dark" layout-padding layout="row" layout-sm="column">
+        <md-input-container>
+            <label>Title</label>
+            <input ng-model="user.title">
+        </md-input-container>
 
+        <md-input-container>
+            <label>Email</label>
+            <input ng-model="user.email" type="email">
+        </md-input-container>
+
+        <md-button class="md-raised">login</md-button>
+
+    </md-content>
 
 </div>
 
