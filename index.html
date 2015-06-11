@@ -18,9 +18,41 @@
 <body ng-app="myapp" ng-controller="myctrl">
 
 
+<md-button class="md-raised md-primary" ng-click="studentlogintab()">student login</md-button> <br />
 
 
+<div align="center" layout="column" ng-show="studentloginshow">
 
+<md-input-container flex>
+    <label>student id</label>
+    <input ng-model="user.city">
+</md-input-container>
+
+<md-input-container flex>
+    <label>password</label>
+    <input ng-model="user.state">
+</md-input-container>
+
+
+</div>
+
+<md-button class="md-raised md-primary" ng-click="teacherlogintab()">teacher login</md-button>
+
+
+<div align="center" layout="column" ng-show="teacherloginshow">
+
+    <md-input-container flex>
+        <label>teacher id</label>
+        <input ng-model="user.city">
+    </md-input-container>
+
+    <md-input-container flex>
+        <label>password</label>
+        <input ng-model="user.state">
+    </md-input-container>
+
+
+</div>
 
 
 </body>
