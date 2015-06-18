@@ -4,13 +4,14 @@
  */
 
 
-    var app = angular.module('app', ['ngNewRouter','ngMaterial']);
+    var app = angular.module('app', ['ngNewRouter','ngMaterial','app.contact','app.home']);
         app.controller('AppController', ['$router', AppController]);
 
     AppController.$routeConfig = [
         { path: '/',           component: 'home' },
-        { path: '/about',           component: 'about' },
-        { path: '/contact',           component: 'contact' },
+        { path: '/about',      component: 'about' },
+        { path: '/contact',    component: 'contact' },
+        { path: '/add-student-form',    component: 'add-student-form' },
         { path: '/detail/:id', component: 'detail' }
     ];
     function AppController ($router) {}
