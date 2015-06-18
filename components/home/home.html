@@ -1,4 +1,7 @@
-<md-button ng-link="add-student-form" class="md-raised md-primary" ng-click="studentlogintab()">student login</md-button> <br />
+
+
+<md-button class="md-raised md-primary" ng-click="home.studentlogintab();">student login</md-button>
+<br />
 
 
 <div  layout="column" ng-show="studentloginshow">
@@ -15,6 +18,7 @@
             <label>Email</label>
             <input ng-model="user.email" type="email">
         </md-input-container>
+
         <md-button class="md-raised">login</md-button>
 
     </md-content>

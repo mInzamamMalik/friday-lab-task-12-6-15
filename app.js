@@ -4,7 +4,9 @@
  */
 
 
-    var app = angular.module('app', ['ngNewRouter','ngMaterial','app.contact','app.home']);
+    var app = angular.module('app', ['ngNewRouter','ngMaterial',
+    'app.home','app.about','app.add-student-form','app.contact']);
+
         app.controller('AppController', ['$router', AppController]);
 
     AppController.$routeConfig = [
@@ -18,18 +20,7 @@
 
 /*
 
-    $scope.studentlogintab = function(){
 
-        $scope.studentloginshow = true;
-        $scope.teacherloginshow = false;
-
-
-    };
-    $scope.teacherlogintab = function(){
-
-        $scope.teacherloginshow = true;
-        $scope.studentloginshow = false;
-    };
 */
 
 
