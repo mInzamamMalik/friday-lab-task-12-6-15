@@ -12,63 +12,24 @@
     <script src="./bower_components/angular-animate/angular-animate.js"></script>
     <script src="./bower_components/angular-material/angular-material.js"></script>
 
+    <script src="./bower_components/angular-new-router/dist/router.es5.js"></script>
+
     <script src="app.js"></script>
 
 </head>
 
 
 
-<body ng-app="myapp" ng-controller="myctrl">
+<body ng-app="app" ng-controller="AppController as control">
 
 <span class="md-display-3">student and teacher app</span><br /><br />
 
-<md-button class="md-raised md-primary" ng-click="studentlogintab()">student login</md-button> <br />
-
-
-<div  layout="column" ng-show="studentloginshow">
-
-    <span class="md-display-1">student login</span>
-
-    <md-content md-theme="docs-dark" layout-padding layout="row" layout-sm="column">
-
-        <md-input-container>
-            <label>Title</label>
-            <input ng-model="user.title">
-        </md-input-container>
-        <md-input-container>
-            <label>Email</label>
-            <input ng-model="user.email" type="email">
-        </md-input-container>
-        <md-button class="md-raised">login</md-button>
-
-    </md-content>
-
-</div>
-
-
-<md-button class="md-raised md-primary" ng-click="teacherlogintab()">teacher login</md-button>
-
-
-<div layout="column" ng-show="teacherloginshow">
-
-    <span class="md-display-1">teacher login</span>
-
-    <md-content md-theme="docs-dark" layout-padding layout="row" layout-sm="column">
-        <md-input-container>
-            <label>Title</label>
-            <input ng-model="user.title">
-        </md-input-container>
-
-        <md-input-container>
-            <label>Email</label>
-            <input ng-model="user.email" type="email">
-        </md-input-container>
-
-        <md-button class="md-raised">login</md-button>
-
-    </md-content>
-
-</div>
+<a ng-link="home">home</a>
+<a ng-link="contact">contact</a>
+<a ng-link="about">about</a>
+<br />
+<br />
+<ng-viewport></ng-viewport>
 
 
 </body>

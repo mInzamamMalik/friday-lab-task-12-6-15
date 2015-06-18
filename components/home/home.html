@@ -1,0 +1,48 @@
+<md-button class="md-raised md-primary" ng-click="studentlogintab()">student login</md-button> <br />
+
+
+<div  layout="column" ng-show="studentloginshow">
+
+    <span class="md-display-1">student login</span>
+
+    <md-content layout-padding layout="row" layout-sm="column">
+
+        <md-input-container>
+            <label>Title</label>
+            <input ng-model="user.title">
+        </md-input-container>
+        <md-input-container>
+            <label>Email</label>
+            <input ng-model="user.email" type="email">
+        </md-input-container>
+        <md-button class="md-raised">login</md-button>
+
+    </md-content>
+
+</div>
+
+
+<md-button class="md-raised md-primary" ng-click="teacherlogintab()">teacher login</md-button>
+
+
+<div layout="column" ng-show="teacherloginshow">
+
+    <span class="md-display-1">teacher login</span>
+
+    <md-content layout-padding layout="row" layout-sm="column">
+        <md-input-container>
+            <label>Title</label>
+            <input ng-model="user.title">
+        </md-input-container>
+
+        <md-input-container>
+            <label>Email</label>
+            <input ng-model="user.email" type="email">
+        </md-input-container>
+
+        <md-button class="md-raised">login</md-button>
+
+    </md-content>
+
+</div>
+
