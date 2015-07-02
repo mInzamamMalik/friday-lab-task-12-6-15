@@ -2,41 +2,47 @@
 
 
 
-angular.module('app.home', [])
-    .controller('HomeController', [function () {
-    data =
+
+
+    angular.module('app.home', ['ngNewRouter'])
+    .controller('HomeController', ['$location', HomeController]);
+
+
+
+function HomeController ($location) {
+
+    this.data =
     {
         name: 'admin',
         password : 'password'
     };
 
-        this.login = function(){
+
+    this.login = function(){
+
+
+        if(this.data.name == this.username && this.data.password == this.pass){
+
+
+            $location.path('/add');
+
+        }else{
+            alert("incorrect")
+        }
 
 
 
 
+    };
 
+    this.studentlogintab = function(){
 
+        this.studentloginshow = true;
+        this.teacherloginshow = false;
+    };
 
-
-            alert("fdgf");
-
-
-
-
-
-
-        };
-
-        this.studentlogintab = function(){
-
-            $scope.studentloginshow = true;
-            $scope.teacherloginshow = false;
-        };
-
-        this.teacherlogintab = function(){
-            $scope.teacherloginshow = true;
-            $scope.studentloginshow = false;
-        };
-
-    }]);
+    this.teacherlogintab = function(){
+        this.teacherloginshow = true;
+        this.studentloginshow = false;
+    };
+}
