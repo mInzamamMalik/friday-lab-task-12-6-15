@@ -5,8 +5,41 @@
 
 angular.module('app.add', [])
     .controller('AddController', function () {
+
         this.teachername = 'Sir Ishaq Bhojani';
 
-        this.id= "admin@admin.com";
-        this.password= "admin"
+        this.store = [];
+
+
+
+
+        this.done = function(){
+
+            this.store.push({
+                name :       this.name,
+                roll :       this.roll,
+                email :      this.email,
+                password :   this.password,
+                class :      this.class
+            })
+
+
+        };
+
+        this.show = false;
+
+        this.showhide = function(){
+
+
+          if(this.show == false){
+              this.show = true;
+          }else{
+              if(this.show == true){
+                  this.show = false;
+              }
+          }
+
+
+        }
+
     });

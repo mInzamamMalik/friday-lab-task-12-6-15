@@ -1,9 +1,9 @@
-<hr/>
+
 <md-button class="md-raised md-primary" ng-click="home.studentlogintab();">student login</md-button>
 <br />
 
 
-<div  layout="column" >
+<div  layout="column"  ng-show="home.studentloginshow">
 
     <span class="md-display-1">student login</span>
 
@@ -11,40 +11,40 @@
 
         <md-input-container>
             <label>username</label>
-            <input type="text" ng-model="home.username">
+            <input type="text" ng-model="home.stdusername">
         </md-input-container>
         <md-input-container>
             <label>password</label>
-            <input ng-model="home.pass" type="password">
+            <input ng-model="home.stdpassword" type="password">
         </md-input-container>
 
-        <md-button class="md-raised" ng-click="home.login()" >login</md-button>
+        <md-button class="md-raised" ng-click="home.stdlogin()" >login</md-button>
 
     </md-content>
 
 </div>
-<hr/>
-
-<md-button class="md-raised md-primary" ng-click="teacherlogintab()">teacher login</md-button>
 
 
+<md-button class="md-raised md-primary" ng-click="home.teacherlogintab();">teacher login</md-button>
 
-<div layout="column" >
+
+
+<div layout="column" ng-show="home.teacherloginshow">
 
     <span class="md-display-1">teacher login</span>
 
     <md-content layout-padding layout="row" layout-sm="column">
         <md-input-container>
             <label>username</label>
-            <input ng-model="user.title">
+            <input type="text" ng-model="home.teacherusername">
         </md-input-container>
 
         <md-input-container>
             <label>password</label>
-            <input ng-model="user.email" type="email">
+            <input ng-model="home.teacherpassword" type="password">
         </md-input-container>
 
-        <md-button class="md-raised">login</md-button>
+        <md-button class="md-raised" ng-click="home.teacherlogin();">login</md-button>
 
     </md-content>
 

@@ -4,35 +4,38 @@
     </md-toolbar>
 </md-content>
 
-<md-button class="md-raised md-primary">Add Student</md-button>
+<md-button class="md-raised md-primary" ng-click="add.showhide();">Add Student</md-button>
+
+<section ng-show="add.show">
 
 <md-input-container>
     <label>Student Name</label>
-    <input type="text" >
+    <input type="text" ng-model="add.name">
 </md-input-container>
 
 <md-input-container>
     <label>Roll Number</label>
-    <input type="number">
+    <input type="number" ng-model="add.roll">
 </md-input-container>
 
 <md-input-container>
     <label>Email</label>
-    <input type="email">
+    <input type="email" ng-model="add.email">
 </md-input-container>
 
 <md-input-container>
     <label>Password</label>
-    <input type="password">
+    <input type="password" ng-model="add.password">
 </md-input-container>
 
 <md-input-container>
     <label>Class</label>
-    <input type="text">
+    <input type="number" ng-model="add.class">
 </md-input-container>
 
+<md-button class="md-primary" ng-click="add.done();">Done</md-button>
 
-
+</section>
 
 
 
@@ -45,10 +48,11 @@
         <th>Password</th>
         <th>Class</th>
     </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+    <tr ng-repeat="item in add.store">
+        <td>{{item.name}}</td>
+        <td>{{item.roll}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.password}}</td>
+        <td>{{item.class}}</td>
     </tr>
 </table>

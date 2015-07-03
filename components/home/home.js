@@ -18,10 +18,10 @@ function HomeController ($location) {
     };
 
 
-    this.login = function(){
+    this.teacherlogin = function(){
 
 
-        if(this.data.name == this.username && this.data.password == this.pass){
+        if(this.data.name == this.teacherusername && this.data.password == this.teacherpassword){
 
 
             $location.path('/add');
@@ -34,6 +34,7 @@ function HomeController ($location) {
 
 
     };
+
 
     this.studentlogintab = function(){
 
