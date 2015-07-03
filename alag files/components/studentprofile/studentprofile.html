@@ -1,0 +1,27 @@
+<md-button style="background-color: #098286;float: right" ng-controller="StudentprofileController as sp" class="md-raised md-primary" ng-click="sp.viewPage()">Logout</md-button>
+<br/>
+<br/>
+<br/>
+<hr/>
+<h1>Student Profile</h1>
+<hr/>
+<div ng-controller="StudentprofileController as sp">
+    <table border="1">
+        <tr>
+            <th>S. No</th>
+            <th>Tasks</th>
+            <th>Teacher</th>
+            <th>Submission Date</th>
+            <th>Status</th>
+        </tr>
+        <tr>
+            <td>{{sp.counter}}</td>
+            <td>{{sp.task}}</td>
+            <td>{{sp.teachName}}</td>
+            <td>{{sp.subDate}}</td>
+            <td><md-checkbox style="float: left" ng-model="checkboxModel.value2" ng-true-value="'Completed'" ng-false-value="'Pending'">Done</md-checkbox> {{checkboxModel.value2}}</td>
+        </tr>
+    </table>
+    <md-button style="background-color: #098286;float: right" ng-controller="StudentprofileController as sp" class="md-raised md-primary" ng-click="sp.show()">Show</md-button>
+
+</div>

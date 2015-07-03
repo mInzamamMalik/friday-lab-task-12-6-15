@@ -1,0 +1,91 @@
+.head{
+    background-color: #2a5252;
+    text-align: left;
+    height: 60px;
+}
+.title
+{
+    color: #ffffff;
+    padding-left: 20px;
+}
+.nav{
+}
+
+body
+{
+    height: 700px;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin: 0 auto 50px auto;
+}
+.Panels{
+    height: auto;
+    margin-top: 50px;
+    text-align: center;
+}
+.TeacherPanel{
+    height: 300px;
+    margin-left: 20px;
+    box-shadow: 1px 3px 3px gainsboro;
+    background-color: #ffffff;
+}
+.StudentPanel{
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 300px;
+    box-shadow: 1px 3px 3px gainsboro;
+    background-color: #ffffff;
+}
+.PanelHeading
+{
+    height: 30px;
+    background-color: #098286;
+    color: #ffffff;
+    text-align: center;
+}
+table{
+    width: 100%;
+    border: 1px solid #098286;
+}
+.footer
+{
+    background-color: #2a5252;
+    height: 50px;
+    text-align: left;
+    width: 100%;
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    margin-bottom:0;
+}
+.footerPara
+{
+    color: #ffffff;
+    font-size: 14px;
+    padding: 5px;
+}
+.footerIcon
+{
+    float: right;
+    padding-bottom: 20px;
+}
+.icon
+{
+    width: 30px;
+    float: right;
+    height: 30px;
+    margin-right: 20px;
+}
+.iconF:hover
+{
+    background-color: #3b5998;
+}
+.iconG:hover
+{
+    background-color: #d34836;
+}
+.iconT:hover
+{
+    background-color: #4099FF;
+}

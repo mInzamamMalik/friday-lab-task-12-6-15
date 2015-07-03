@@ -1,0 +1,76 @@
+<md-button style="background-color: #098286;float: right" ng-controller="TeacherprofileController as tp" class="md-raised md-primary" ng-click="tp.viewPage()">Logout</md-button>
+<br/>
+<br/>
+<br/>
+<hr/>
+<h1> Teacher Profile</h1>
+<hr/>
+<div ng-controller="TeacherprofileController as tp">
+    <md-button style="background-color: #098286" class="md-raised md-primary" ng-click="tp.add()">Add Students</md-button>
+    <md-button style="background-color: #098286" class="md-raised md-primary" ng-click="tp.viewStd()">View Students</md-button>
+    <div class="addStdDiv" style="margin: 0 auto; width: 50%" ng-show="tp.flag">
+<md-input-container>
+    <label>Name</label>
+    <input ng-model="tp.name" type="text" ng-required="true">
+</md-input-container>
+<md-input-container>
+    <label>Age</label>
+    <input ng-model="tp.age" type="number" ng-required="true">
+</md-input-container>
+    <md-input-container>
+        <label>Roll #</label>
+        <input type="number" ng-model="tp.rollNo" ng-required="true">
+    </md-input-container>
+    <md-input-container>
+        <label>Password</label>
+        <input type="password" ng-model="tp.password" ng-required="true">
+    </md-input-container>
+    <md-button style="background-color: #098286" class="md-raised md-primary" ng-click="tp.addStudent()">Save Student</md-button>
+    </div>
+
+    <table ng-show="tp.flag2" border="1">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Roll #</th>
+            <th>Task</th>
+            <th>Submission Date</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+        <tr ng-repeat="a in tp.arr">
+            <td style="text-transform: capitalize">
+                <span ng-hide="tp.show">{{a.name}}</span>
+                <input type="text" ng-model="tp.Name"  ng-show="tp.show"/>
+            </td>
+            <td style="text-transform: capitalize">
+                <span ng-hide="tp.show"> {{a.age}}</span>
+                <input type="number" ng-model="tp.Age" ng-show="tp.show"/>
+            </td>
+            <td style="text-transform: capitalize">
+               <span ng-hide="tp.show"> {{a.rollNo}}</span>
+                <input type="number" ng-model="tp.RollNo" ng-show="tp.show"/>
+            </td>
+            <td style="text-transform: capitalize">
+                <span ng-hide="tp.show"> {{a.task.text}} </span>
+                <input type="text" ng-model="tp.Task" ng-show="tp.show"/>
+            </td>
+            <td style="text-transform: capitalize">
+                <span ng-hide="tp.show"> {{a.task.submissionDate}} </span>
+                <input type="text" ng-model="tp.subDate" ng-show="tp.show"/>
+            </td>
+            <td style="text-transform: capitalize">
+                <span ng-hide="tp.show"> {{a.task.status}} </span>
+                <input type="text" ng-model="tp.status" ng-show="tp.show"/>
+            </td>
+            <td>
+                <md-button class="md-primary" ng-hide="tp.show" ng-click="tp.Delete($index)">Remove</md-button>
+                <md-button class="md-primary" ng-hide="tp.show" ng-click="tp.giveTask($index)">Give Task</md-button>
+                <md-button class="md-primary"  ng-hide="tp.show" ng-click="tp.edit($index)">Edit</md-button>
+                <md-button class="md-primary" ng-show="tp.show" ng-click="tp.saveData($index)">Save</md-button>
+
+            </td>
+        </tr>
+    </table>
+
+</div>

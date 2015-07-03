@@ -1,0 +1,32 @@
+<div>
+    <div class="Panels"  layout="row">
+        <div class="TeacherPanel" ng-controller="teacherLogin as teacher" flex>
+            <h2 class="PanelHeading">Teacher Panel</h2>
+            <ng-form name="teacherForm">
+            <md-input-container>
+                <label>Email</label>
+                <input ng-model="teacher.email" ng-required="true">
+            </md-input-container>
+            <md-input-container>
+                <label>Password</label>
+                <input type="password" ng-model="teacher.password" ng-required="true">
+            </md-input-container>
+            <md-button style="background-color: #098286" class="md-raised md-primary" ng-disabled="teacherForm.$invalid" ng-click="teacher.login()">Login</md-button>
+        </div>
+        <div class="StudentPanel" flex ng-controller="studentLogin as student">
+            <h2 class="PanelHeading">Student Panel</h2>
+            <ng-form name="studentForm">
+            <md-input-container>
+                <label>Roll Number</label>
+                <input ng-model="student.rollNo" type="number" ng-required="true">
+            </md-input-container>
+            <md-input-container>
+                <label>Password</label>
+                <input ng-model="student.password" type="password" ng-required="true">
+            </md-input-container>
+            <md-button style="background-color: #098286" class="md-raised md-primary" ng-disabled="studentForm.$invalid" ng-click="student.login()">Login</md-button>
+            </ng-form>
+        </div>
+    </div>
+
+</div>

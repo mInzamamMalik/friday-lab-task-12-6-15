@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>School Management</title>
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css"/>
+    <link rel="stylesheet" href="index.css"/>
+    <link rel="stylesheet" href="components/teacherprofile/teacher.css/">
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/angular-new-router/dist/router.es5.js"></script>
+    <script src="index.js"></script>
+    <script src="components/home/home.js"></script>
+    <script src="components/teacherprofile/teacherProfile.js"></script>
+    <script src="components/studentprofile/studentProfile.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="Login as log">
+
+   <div class="head" layout="row">
+
+       <div class="title" flex="30">
+           <a ng-link="home" style="text-decoration: none;color: #ffffff"> <h1>SMA <span style="color: #ffffff;font-size: 12px;">School Management App</span></h1>
+           </a>
+       </div>
+       <div class="nav" flex>
+       </div>
+   </div>
+
+<ng-viewport></ng-viewport>
+
+<div class="footer" layout="row">
+    <p class="footerPara" flex> © 2015-2018 SMA.com All rights reserved</p>
+    <p class="footerIcon" flex>
+        <img class="icon iconT" src="images/twitter.gif" alt=""/>
+        <img class="icon iconG" src="images/g.png" alt=""/>
+        <img class="icon iconF" style="" src="images/fb.png" alt=""/>
+    </p>
+</div>
+
+</body>
+</html>
