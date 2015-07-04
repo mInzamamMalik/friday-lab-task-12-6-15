@@ -1,11 +1,16 @@
 <md-content>
     <md-toolbar class="md-warn">
-        <h1>{{add.teachername}}</h1>
+        <h1>{{add.teachername}}<a ng-link="/">
+            <md-button>logout</md-button>
+        </a>
+        </h1>
     </md-toolbar>
 </md-content>
 
-<md-button class="md-raised md-primary" ng-click="add.showhide();">Add Student</md-button>
-
+<div align="center">
+    <md-button class="md-raised md-primary" ng-click="add.showhide();">Add Student</md-button>
+    <md-button class="md-raised md-primary" ng-click="add.showhidestd();">view Student</md-button>
+</div>
 <section ng-show="add.show">
 
 <md-input-container>
@@ -38,8 +43,7 @@
 </section>
 
 
-
-<table border="1" cellpadding="5">
+<table border="1" cellpadding="5" align="center" ng-show="add.showstd">
     <tr>
 
         <th>Student Name</th>

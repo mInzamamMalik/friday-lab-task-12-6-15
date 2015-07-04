@@ -43,7 +43,7 @@ describe('getJSDocComment service', function() {
   });
 
 
-  it('should return a result that contains info about the comment', function() {
+  it('should return a result that contains info teacherprofile the comment', function () {
     var codeTree = {};
     var result = getJSDocComment(createComment('/** this is a comment */', 10, 20, codeTree));
     expect(result.startingLine).toEqual(10);

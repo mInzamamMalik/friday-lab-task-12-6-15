@@ -27,10 +27,9 @@ angular.module('app.add', [])
         };
 
         this.show = false;
+        this.showstd = false;
 
         this.showhide = function(){
-
-
           if(this.show == false){
               this.show = true;
           }else{
@@ -38,8 +37,15 @@ angular.module('app.add', [])
                   this.show = false;
               }
           }
-
-
+        };
+        this.showhidestd = function () {
+            if (this.showstd == false) {
+                this.showstd = true;
+            } else {
+                if (this.showstd == true) {
+                    this.showstd = false;
+                }
+            }
         }
 
     });

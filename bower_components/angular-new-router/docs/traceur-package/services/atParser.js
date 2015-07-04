@@ -16,7 +16,7 @@ module.exports = function atParser(AttachCommentTreeVisitor, SourceFile, Parser,
 
     /**
      * Parse a module AST from the contents of a file.
-     * @param {Object} fileInfo information about the file to parse
+     * @param {Object} fileInfo information teacherprofile the file to parse
      * @return { { moduleTree: Object, comments: Array } } An object containing the parsed module
      *             AST and an array of all the comments found in the file
      */

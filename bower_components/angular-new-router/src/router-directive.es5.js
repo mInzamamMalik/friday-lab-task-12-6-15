@@ -19,7 +19,7 @@ angular.module('ngNewRouter', [])
   .directive('ngViewport', ngViewportDirective)
   .directive('ngViewport', ngViewportFillContentDirective)
   .directive('ngLink', ngLinkDirective)
-  .directive('a', anchorLinkDirective)
+  .directive('a', anchorLinkDirective);
 
 
 
@@ -95,7 +95,7 @@ function routerFactory($$rootRouter, $rootScope, $location, $$grammar, $controll
         $location.path(newUrl);
       }
     });
-  }
+  };
 
   return $$rootRouter;
 }

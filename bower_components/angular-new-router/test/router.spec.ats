@@ -13,34 +13,45 @@ describe('RootRouter', () => {
   });
 
   describe('config', () => {
-    it('should renavigate after being configured', sync(async () => {
+    it('should renavigate after being configured', sync(async();
+    =>
+    {
       view = makeMockComponent('root');
-      await router.registerViewport(view);
-      await router.navigate('/a');
+      await;
+      router.registerViewport(view);
+      await;
+      router.navigate('/a');
       expect(view.activate).not.toHaveBeenCalled();
 
-      await router.config([
+      await;
+      router.config([
         { path: '/a', component: 'A' }
       ]);
       expect(view.activate).toHaveBeenCalled();
-    }));
-
-    it('should allow aliasing', sync(async () => {
+    }
+    ))
+    it('should allow aliasing', sync(async();
+    =>
+    {
       view = makeMockComponent('root');
-      await router.config([
+      await;
+      router.config([
         { path: '/a', component: 'A', as: 'B' }
       ]);
       expect(router.generate('B')).toBe('/a');
-    }));
-
-    it('should alias configs with no default based on viewport name', sync(async () => {
-      await router.config([
+    }
+    ))
+    it('should alias configs with no default based on viewport name', sync(async();
+    =>
+    {
+      await;
+      router.config([
         { path: '/a', components: { master: 'A', detail: 'B' } }
       ]);
       expect(router.generate('master:A')).toBe('/a');
       expect(router.generate('detail:B')).toBe('/a');
-    }));
-
+    }
+    ))
     it('should throw it a config uses both "component" and "components"', () => {
       expect(() => {
         router.config([
@@ -51,54 +62,72 @@ describe('RootRouter', () => {
   });
 
   describe('when configured', () => {
-    beforeEach(sync(async () => {
+    beforeEach(sync(async();
+    =>
+    {
       view = makeMockComponent('root');
-      await router.registerViewport(view);
-      await router.config([
+      await;
+      router.registerViewport(view);
+      await;
+      router.config([
         { path: '/a', component: 'A' }
       ]);
-    }));
-
-    it('should activate viewports on navigation', sync(async () => {
-      await router.navigate('/a');
+    }
+    ))
+    it('should activate viewports on navigation', sync(async();
+    =>
+    {
+      await;
+      router.navigate('/a');
       expect(view.activate).toHaveBeenCalled();
-    }));
-
-    it('should check the canActivate hook to see if it can navigate', sync(async () => {
-      var status = await router.navigate('/a');
+    }
+    ))
+    it('should check the canActivate hook to see if it can navigate', sync(async();
+    =>
+    {
+      var status = await;
+      router.navigate('/a');
       expect(status).toBe('/a');
       expect(view.canActivate).toHaveBeenCalled();
-    }));
-
-    it('should check the canDeactivate hook to see if it can navigate', sync(async () => {
+    }
+    ))
+    it('should check the canDeactivate hook to see if it can navigate', sync(async();
+    =>
+    {
       view.canDeactivate = jasmine.createSpy('canDeactivate component').and.returnValue(true);
-      var status = await router.navigate('/a');
+      var status = await;
+      router.navigate('/a');
       expect(status).toBe('/a');
 
       view.canDeactivate = jasmine.createSpy('canDeactivate component').and.returnValue(false);
       view.activate.calls.reset();
-      var status = await router.navigate('/a');
+      var status = await;
+      router.navigate('/a');
       expect(view.activate).not.toHaveBeenCalled();
-    }));
-
+    }
+    ))
     it('should generate URLs', () => {
       expect(router.generate('A', {})).toBe('/a');
     });
 
-    it('should navigate viewports registered after a navigation happens', sync(async () => {
+    it('should navigate viewports registered after a navigation happens', sync(async();
+    =>
+    {
       router = new RootRouter(new Grammar(), new Pipeline());
       view = makeMockComponent('root');
-      await router.config([
+      await;
+      router.config([
         { path: '/a', component: 'A' }
       ]);
-      await router.navigate('/a');
+      await;
+      router.navigate('/a');
       expect(view.activate).not.toHaveBeenCalled();
 
-      await router.registerViewport(view);
+      await;
+      router.registerViewport(view);
       expect(view.activate).toHaveBeenCalled();
-    }));
-
-
+    }
+    ))
     describe('with child routers', () => {
       var child, childView;
 
@@ -112,19 +141,26 @@ describe('RootRouter', () => {
         child.registerViewport(childView);
       });
 
-      it('should check if it can navigate', sync(async () => {
-        var status = await router.navigate('/a/b');
+      it('should check if it can navigate', sync(async();
+      =>
+      {
+        var status = await;
+        router.navigate('/a/b');
 
         expect(status).toBe('/a/b');
         expect(childView.canActivate).toHaveBeenCalled();
-      }));
-
-      it('should activate viewports on navigation', sync(async () => {
-        await router.navigate('/a/b');
+      }
+      ))
+      it('should activate viewports on navigation', sync(async();
+      =>
+      {
+        await;
+        router.navigate('/a/b');
 
         expect(view.activate).toHaveBeenCalled();
         expect(childView.activate).toHaveBeenCalled();
-      }));
+      }
+      ))
 
       //TODO: implement pipeline in ES6
       // iit('should deactivate children when navigating away', sync(async () => {
@@ -157,24 +193,33 @@ describe('RootRouter', () => {
       //   expect(childView.activate).toHaveBeenCalled();
       // }));
 
-      it('should not activate viewports if a predicate rejects', sync(async () => {
+      it('should not activate viewports if a predicate rejects', sync(async();
+      =>
+      {
         childView.canActivate = () => Promise.reject();
-        await router.navigate('/a/b');
+        await;
+        router.navigate('/a/b');
 
         expect(view.activate).not.toHaveBeenCalled();
         expect(childView.activate).not.toHaveBeenCalled();
-      }));
-
-      it('should generate URLs', sync(async () => {
+      }
+      ))
+      it('should generate URLs', sync(async();
+      =>
+      {
         expect(child.generate('C')).toBe('/a/c');
         expect(router.generate('C')).toBe('/a/c');
-      }));
-
-      it('should generate URLs with params', sync(async () => {
-        await child.config({ path: '/d/:param', component: 'D'});
+      }
+      ))
+      it('should generate URLs with params', sync(async();
+      =>
+      {
+        await;
+        child.config({path: '/d/:param', component: 'D'});
         expect(child.generate('D', {param: 'foo'})).toBe('/a/d/foo');
         expect(router.generate('D', {param: 'foo'})).toBe('/a/d/foo');
-      }));
+      }
+      ))
 
       // TODO: test recursive routes
     });
@@ -182,17 +227,25 @@ describe('RootRouter', () => {
     describe('with sibbling routers', () => {
       var left, right;
 
-      beforeEach(sync(async () => {
+      beforeEach(sync(async();
+      =>
+      {
         left = router.childRouter('A');
         right = router.childRouter('A');
-      }));
-
-      it('should work', sync(async() => {
-        await left.config({ path: '/left', component: 'L' });
-        await right.config({ path: '/right', component: 'R' });
-      }));
-
-      it('should throw if children cannot agree on a cannonical URL', sync(async() => {
+      }
+      ))
+      it('should work', sync(async();
+      =>
+      {
+        await;
+        left.config({path: '/left', component: 'L'});
+        await;
+        right.config({path: '/right', component: 'R'});
+      }
+      ))
+      it('should throw if children cannot agree on a cannonical URL', sync(async();
+      =>
+      {
         expect(() => {
           left.config([
             { path: '/b', redirectTo: '/one' },
@@ -203,8 +256,8 @@ describe('RootRouter', () => {
             { path: '/other', component: 'C' }
           ]);
         }).toThrowError('"/b" already maps to "/one"');
-      }));
-
+      }
+      ))
     });
   });
 });
@@ -212,14 +265,15 @@ describe('RootRouter', () => {
 function sync (fn) {
   return async (done) => {
     try {
-      await fn();
+      await;
+      fn();
     } catch (e) {
       expect(e.stack).toBe('');
     } finally {
       done();
     }
   }
-}
+};
 
 function makeMockComponent (name = '') {
   return {
