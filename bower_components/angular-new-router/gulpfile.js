@@ -34,7 +34,7 @@ gulp.task('angularify', ['transpile'], function() {
   var generated = gulp.src(['./src/router.ats', './src/grammar.ats'])
       .pipe(modulate({
         moduleName: 'ngNewRouter.generated'
-    }));
+      }))
 
   return gulpMerge(directive, generated)
       .pipe(concat('router.es5.js'))

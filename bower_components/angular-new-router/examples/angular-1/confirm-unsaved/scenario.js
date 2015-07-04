@@ -43,7 +43,7 @@ describe('angular 1.x "Confirm Unsaved" App', function() {
       browser.getLocationAbsUrl().then(function(url) {
         expect(url).toBe('/');
       });
-    });
+    })
 
     it('should prompt you to save if content was changed', function() {
       var postContent = element(by.model('editPost.newContent'));
