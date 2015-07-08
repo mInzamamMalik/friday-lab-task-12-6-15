@@ -23,8 +23,9 @@
 
     app.service("dataservice",function(){
 
-        
-        var teacher = [
+        this.currentteacher = null;
+        this.currentstudent = null;
+        this.teacher = [
             {
                 name: "Ishaq Bhojani",
                 username : "admin",

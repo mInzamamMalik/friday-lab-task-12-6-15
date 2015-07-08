@@ -5,31 +5,26 @@
 
 
     angular.module('app.home', ['ngNewRouter'])
-    .controller('HomeController', ['$location', HomeController]);
+    .controller('HomeController', ['$location','dataservice', HomeController]);
 
 
 
-function HomeController ($location) {
-
-    this.data =
-    {
-        name: 'admin',
-        password : 'password'
-    };
-
+function HomeController ($location,dataservice) {
 
     this.teacherlogin = function(){
 
+        for(i=0 ; i < dataservice.teacher.length ; i++) {
 
-        if(this.data.name == this.teacherusername && this.data.password == this.teacherpassword){
+            if (dataservice.teacher[i].username == this.teacherusername && dataservice.teacher[i].password == this.teacherpassword) {
 
+                dataservice.currentteacher = i;
+                $location.path('/add');
 
-            $location.path('/add');
+            } else {
+                alert("incorrect")
+            }
 
-        }else{
-            alert("incorrect")
         }
-
 
 
 

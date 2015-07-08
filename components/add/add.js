@@ -4,9 +4,10 @@
 
 
 angular.module('app.add', [])
-    .controller('AddController', function () {
+    .controller('AddController', function(dataservice) {
 
-        this.teachername = 'Sir Ishaq Bhojani';
+        this.teachername = dataservice.teacher[0].name + " " + dataservice.currentteacher;
+
 
         this.store = [];
 
