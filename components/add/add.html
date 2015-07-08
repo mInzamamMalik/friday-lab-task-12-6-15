@@ -1,6 +1,6 @@
 <md-content>
     <md-toolbar class="md-warn">
-        <h1>{{add.teachername}}<a ng-link="/">
+        <h1>{{add.teachername}}<a style="text-decoration: none" ng-link="/">
             <md-button>logout</md-button>
         </a>
         </h1>
@@ -46,13 +46,16 @@
 <table border="1" cellpadding="5" align="center" ng-show="add.showstd">
     <tr>
 
+        <th>No.</th>
         <th>Student Name</th>
         <th>Roll Number</th>
         <th>Email</th>
         <th>Password</th>
         <th>Class</th>
+        <th>Action</th>
     </tr>
     <tr ng-repeat="item in add.store">
+        <td>{{$index + 1}}</td>
         <td>{{item.name}}</td>
         <td>{{item.roll}}</td>
         <td>{{item.email}}</td>
