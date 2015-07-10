@@ -17,11 +17,9 @@ function StudentController ($location,dataservice) {
 
     console.log(this.std);
 
-/*
-    this.tasks = std.task;
+    this.tasks = dataservice.teacher[teacherindex].students[studentindex].task;
         console.log(this.tasks);
 
-*/
 
 
 }

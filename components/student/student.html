@@ -8,17 +8,19 @@
             </a>
         </h1>
     </md-toolbar>
-    your instructor {{student.teacher.name}}
+    <span>your instructor <b>{{student.teacher.name}}</b></span>
 </md-content>
 
 
 
 <table border="1" cellpadding="5" align="center">
     <tr>
+        <th>No.</th>
         <th>task</th>
         <th>status</th>
     </tr>
     <tr ng-repeat="item in student.tasks">
+        <td>{{$index+1}}</td>
         <td>{{item.taskstring}}</td>
         <td>{{item.done}}</td>
 
