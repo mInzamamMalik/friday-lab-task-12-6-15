@@ -6,26 +6,25 @@
 angular.module('app.add', [])
     .controller('AddController', function(dataservice) {
 
-        this.teachername = dataservice.teacher[0].name + " " + dataservice.currentteacher;
-
-
-        this.store = [];
-
-
-
+        var index = dataservice.currentteacher;
+        this.teachername = dataservice.teacher[index].name;
 
         this.done = function(){
 
-            this.store.push({
-                name :       this.name,
-                roll :       this.roll,
-                email :      this.email,
-                password :   this.password,
-                class :      this.class
-            })
+            dataservice.teacher[index].students.push(
+                {
+                    name :       this.name,
+                    roll :       this.roll,
+                    email :      this.email,
+                    password :   this.password,
+                    class :      this.class
+
+                }
+            )
 
 
         };
+        this.students = dataservice.teacher[index].students;
 
         this.show = false;
         this.showstd = false;

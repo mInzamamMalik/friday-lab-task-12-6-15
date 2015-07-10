@@ -35,7 +35,7 @@
 
 <md-input-container>
     <label>Class</label>
-    <input type="number" ng-model="add.class">
+    <input type="text" ng-model="add.class">
 </md-input-container>
 
 <md-button class="md-primary" ng-click="add.done();">Done</md-button>
@@ -54,7 +54,7 @@
         <th>Class</th>
         <th>Action</th>
     </tr>
-    <tr ng-repeat="item in add.store">
+    <tr ng-repeat="item in add.students">
         <td>{{$index + 1}}</td>
         <td>{{item.name}}</td>
         <td>{{item.roll}}</td>

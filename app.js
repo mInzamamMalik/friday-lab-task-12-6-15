@@ -18,19 +18,22 @@
 
     function AppController ($router)
     {
-
-    };
+        this.name = "abc";
+    }
 
     app.service("dataservice",function(){
 
         this.currentteacher = null;
+
+        this.myteacher = null;
         this.currentstudent = null;
+
         this.teacher = [
             {
                 name: "Ishaq Bhojani",
                 username : "admin",
                 password : "password",
-                student : [
+                students : [
                     {
                         name : "Inzamam Malik",
                         roll : "2225",
