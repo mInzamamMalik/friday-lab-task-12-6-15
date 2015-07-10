@@ -35,8 +35,8 @@ function HomeController ($location,dataservice) {
                 if (dataservice.teacher[i].students[j].email == this.stdemail
                     && dataservice.teacher[i].students[j].password == this.stdpassword){
 
-                    dataservice.myteacher = i;
-                    dataservice.currentstudent = j;
+                    dataservice.teacherindex = i;
+                    dataservice.studentindex = j;
 
                     $location.path('/student');
 

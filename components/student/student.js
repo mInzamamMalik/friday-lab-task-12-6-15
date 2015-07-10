@@ -7,14 +7,21 @@ angular.module('app.student', ['ngNewRouter'])
 
 
 function StudentController ($location,dataservice) {
-var teacherindex = dataservice.myteacher;
 
-this.teacher = dataservice.teacher[teacherindex];
-this.std = teacher.student[currentstudent];
-this.tasks = std.task;
-    console.log(this.tasks);
+    var teacherindex = dataservice.teacherindex;
+    var studentindex = dataservice.studentindex;
 
+    this.teacher = dataservice.teacher[teacherindex];
 
+    this.std =     dataservice.teacher[teacherindex].students[studentindex];
+
+    console.log(this.std);
+
+/*
+    this.tasks = std.task;
+        console.log(this.tasks);
+
+*/
 
 
 }

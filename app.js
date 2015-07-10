@@ -25,8 +25,8 @@
 
         this.currentteacher = null;
 
-        this.myteacher = null;
-        this.currentstudent = null;
+        this.teacherindex = null;
+        this.studentindex = null;
 
         this.teacher = [
             {
